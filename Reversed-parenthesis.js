@@ -30,3 +30,5 @@ function solve(s) {
   }
   return count;
 }
+
+// or
