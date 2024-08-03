@@ -13,3 +13,20 @@ Note: Parenthesis will be either "(" or ")".
 
 
 // Solution
+
+function solve(s) {
+  while ( s.includes('()') ) {
+    s = s.replace(/\(\)/g, '');
+  }
+  if ( s.length % 2 === 1 ) return -1;
+  let count = 0;
+  const obj = {
+      ')(': 2,
+      '((': 1,
+      '))': 1,
+    };
+  for ( let i = 0; i <= s.length-2; i += 2 ) {
+    count += obj[s[i]+s[i+1]]
+  }
+  return count;
+}
